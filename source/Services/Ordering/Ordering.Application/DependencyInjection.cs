@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Ordering.Application;
 
@@ -8,6 +9,7 @@ public static class DependencyInjection
     {
         // Register application services here
         // Example: services.AddScoped<IOrderService, OrderService>();
+        services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()); });
         return services;
     }
 }

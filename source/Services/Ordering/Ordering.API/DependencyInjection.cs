@@ -13,7 +13,6 @@ public static class DependencyInjection
     {
         // Configure API middleware here
         // Example: app.UseRouting();
-        app.MapControllers();
         return app;
     }
 }
